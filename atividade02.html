@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumo de Combustível</title>
+
+    <style>
+        body {
+            background-image: url(/imagens/postodeGasolina.jpg);
+        }
+
+        #estrutura {
+            background: rgb(153, 140, 140);
+            padding: 20px;
+            text-align: center;
+            margin: 160px;
+            border-radius: 20px;
+            border: 3px solid black;
+        }
+
+        #inicial:hover,
+        #final:hover,
+        #litros:hover{
+            box-shadow: 3px 2px green;
+        }
+
+        #calc:hover{
+            box-shadow: 3px 2px black;
+        }
+
+    </style>
+
+    <script>
+        function somar() {
+            var inicial = document.getElementById("inicial").value;
+            var final = document.getElementById("final").value;
+            var litros = document.getElementById("litros").value;
+
+            var media = parseInt(final) - parseInt(inicial);
+            var km = parseInt(media) / parseInt (litros);
+
+            document.getElementById("result").innerHTML = "RESULTADO:" + (km) + "KM/L";
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="estrutura">
+        <h1>Média de KM/L</h1>
+
+        <p>Neste texto, utilizaremos como base, a quilometragem inicial, final e litros abastecidos.</p>
+
+        <div class="centro">
+
+            <label>Quilometragem inicial:</label> <br>
+            <input type="number" value="" id="inicial"><br>
+
+            <label>Quilometragem final:</label> <br>
+            <input type="number" value="" id="final"> <br>
+
+            <label>Litros abastecidos:</label> <br>
+            <input type="number" value="" id="litros"> <br> <br>
+
+            <input type="button" value="Calcular" onclick="somar()" id="calc"> <br> <br>
+
+            <p id="result">RESULTADO:</p>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
